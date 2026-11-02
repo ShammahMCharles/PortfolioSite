@@ -1,5 +1,6 @@
 
 import { useState, type FormEvent } from "react";
+import { sendContactMessage } from "../services/api";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -17,27 +18,12 @@ const Contact = () => {
     setStatus("");
 
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/contacts`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name,
-            email,
-            subject,
-            message,
-          }),
-        }
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Unable to send your message.");
-      }
+       await sendContactMessage({
+        name,
+        email,
+        subject,
+        message,
+      });
 
       setStatus("Your message was sent successfully!");
 

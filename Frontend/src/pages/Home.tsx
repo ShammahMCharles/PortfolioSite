@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 
 const Home = () => {
   return (
@@ -21,19 +22,19 @@ const Home = () => {
       </p>
 
       <div className="mt-8 flex flex-wrap gap-4">
-        <a
-          href="/projects"
+        <Link
+          to="/projects"
           className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700"
         >
           View My Projects
-        </a>
+        </Link>
 
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="rounded-lg border border-gray-300 px-6 py-3 font-medium text-gray-700 hover:bg-gray-100"
         >
           Contact Me
-        </a>
+        </Link>
       </div>
 
     </section>
