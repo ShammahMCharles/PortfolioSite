@@ -1,41 +1,33 @@
 
+import ResumeHero from "../components/resume/ResumeHero";
+import CareerStory from "../components/resume/CareerStory";
+import ExperienceTimeline from "../components/resume/ExperienceTimeLine";
+import EducationSection from "../components/resume/EducationSection";
+import CertificationSection from "../components/resume/CertificationSection";
+import SkillsSection from "../components/resume/SkillsSection";
+import ProjectShowcase from "../components/resume/ProjectShowcase";
+
 const Resume = () => {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
+    <main className="min-h-screen bg-slate-950 px-6 py-16">
+      <div className="mx-auto max-w-7xl space-y-16">
 
-      <h1 className="text-4xl font-bold text-gray-900">
-        My Resume
-      </h1>
+        <ResumeHero />
 
-      <p className="mt-4 max-w-2xl text-gray-600">
-        Explore my education, technical skills, certifications,
-        and professional background.
-      </p>
+        <CareerStory />
 
-      <div className="mt-10 rounded-xl border border-gray-200 p-8">
+        <ExperienceTimeline />
 
-        <h2 className="text-2xl font-semibold text-gray-900">
-          Professional Background
-        </h2>
+        <EducationSection />
 
-        <p className="mt-3 leading-relaxed text-gray-600">
-          My background includes software development,
-          information security, technical support, and cloud technologies.
-        </p>
+        <CertificationSection />
 
-        <h2 className="mt-8 text-2xl font-semibold text-gray-900">
-          Technical Interests
-        </h2>
+        <SkillsSection />
 
-        <p className="mt-3 text-gray-600">
-          Full-stack development, cloud infrastructure,
-          cybersecurity, and software engineering.
-        </p>
-
-        {/* We'll add your full resume and PDF download here. */}
+        <ProjectShowcase />
 
       </div>
-    </section>
+    </main>
   );
 };
 
