@@ -1,4 +1,3 @@
-
 import { useState, type FormEvent } from "react";
 import { sendContactMessage } from "../services/api";
 
@@ -18,7 +17,7 @@ const Contact = () => {
     setStatus("");
 
     try {
-       await sendContactMessage({
+      await sendContactMessage({
         name,
         email,
         subject,
@@ -36,7 +35,7 @@ const Contact = () => {
       setStatus(
         error instanceof Error
           ? error.message
-          : "Something went wrong. Please try again."
+          : "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -48,8 +47,7 @@ const Contact = () => {
       <h1 className="mb-3 text-4xl font-bold">Contact Me</h1>
 
       <p className="mb-8 text-gray-600">
-        Have a question, opportunity, or project in mind?
-        Send me a message!
+        Have a question, opportunity, or project in mind? Send me a message!
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
